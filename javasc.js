@@ -22,25 +22,42 @@ function playerChoice () {
 function game (player, computer) {
     player = playerChoice();
     computer = getCumputerChoice();
-    let playerPoints = "Player Wins! ";
-    let computerPoints = "Computer wins! ";
+    let playerWin = "Player Wins! ";
+    let computerWin = "Computer Wins! ";
     const rockBeats = "Rock beats Scissors";
     const paperBeats = "Paper beats Rock";
     const scissorsBeats = "Scissors beats Paper"
     if (player === "Rock" && computer === "Scissors") {
-        console.log(`${playerPoints}${rockBeats}`)
+        return `${playerWin}${rockBeats}`
     }else if (player ==="Rock" && computer === "Paper") {
-        console.log(`${computerPoints}${paperBeats}`)
+        return `${computerWin}${paperBeats}`
     }else if (player === "Paper" && computer === "Rock") {
-        console.log(`${playerPoints}${paperBeats}`)
+        return `${playerWin}${paperBeats}`
     }else if (player === "Paper" && computer === "Scissors") {
-        console.log(`${computerPoints}${scissorsBeats}`)
+        return `${computerWin}${scissorsBeats}`
     }else if (player === "Scissors" && computer === "Paper") {
-        console.log(`${playerPoints}${scissorsBeats}`)
+        return `${playerWin}${scissorsBeats}`
     } else if ( player === "Scissors" && computer == "Rock") {
-        console.log(`${computerPoints}${rockBeats}`)
+        return `${computerWin}${rockBeats}`
     }else {
-        console.log("Draw")
+        return "Draw"
     }  
 }
-game ()
+function gameLoop(winer) {    
+    for (let i = 0; i < 5; i++){
+        let a = 0;
+        let b = 0;
+        let playerPoint = " Player points ";
+        let computerPoint = " ComputerPoint ";
+        winer = game()
+        if (winer === "Player Wins! Rock beats Scissors" || winer === "Player Wins! Paper beats Rock" || winer === "Player Wins! Scissors beats Paper") {
+            console.log(winer + playerPoint + a++)
+        }else if (winer === "Computer Wins! Rock beats Scissors" || winer === "Computer Wins! Paper beats Rock" || winer === "Computer Wins! Scissors beats Paper") {
+            console.log(winer + computerPoint + b++)
+        }else {
+            console.log("Draw! No points!")
+        }
+        
+    }
+}    
+gameLoop()
