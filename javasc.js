@@ -1,13 +1,18 @@
-//make rock paper and scissors in a singel letter or number value;
 let options = ['Rock', 'Paper', 'Scissors'];
+let playerScore = 0;
+let computerScore = 0;
+let playerWin = "Player Wins! ";
+let computerWin = "Computer Wins! ";
+const rockBeats = "Rock beats Scissors";
+const paperBeats = "Paper beats Rock";
+const scissorsBeats = "Scissors beats Paper";
 
-// computer will pick randome and display it;
 function getCumputerChoice () {
     let randomOptions = options[Math.floor(Math.random() * options.length)];
     let option = randomOptions.toString();
     return option
 }    
-//player will pick a option
+
 function playerChoice () {
     let choice1 = prompt("Make your choice")
     let choiceLower = choice1.toLocaleLowerCase()
@@ -22,11 +27,6 @@ function playerChoice () {
 function game (player, computer) {
     player = playerChoice();
     computer = getCumputerChoice();
-    let playerWin = "Player Wins! ";
-    let computerWin = "Computer Wins! ";
-    const rockBeats = "Rock beats Scissors";
-    const paperBeats = "Paper beats Rock";
-    const scissorsBeats = "Scissors beats Paper"
     if (player === "Rock" && computer === "Scissors") {
         return `${playerWin}${rockBeats}`
     }else if (player ==="Rock" && computer === "Paper") {
@@ -45,15 +45,13 @@ function game (player, computer) {
 }
 function gameLoop(winer) {    
     for (let i = 0; i < 5; i++){
-        let a = 0;
-        let b = 0;
-        let playerPoint = " Player points ";
-        let computerPoint = " ComputerPoint ";
         winer = game()
         if (winer === "Player Wins! Rock beats Scissors" || winer === "Player Wins! Paper beats Rock" || winer === "Player Wins! Scissors beats Paper") {
-            console.log(winer + playerPoint + a++)
+            
+            console.log(`${playerWin}`)
         }else if (winer === "Computer Wins! Rock beats Scissors" || winer === "Computer Wins! Paper beats Rock" || winer === "Computer Wins! Scissors beats Paper") {
-            console.log(winer + computerPoint + b++)
+            
+            console.log(`${computerWin}`)
         }else {
             console.log("Draw! No points!")
         }
