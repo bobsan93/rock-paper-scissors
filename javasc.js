@@ -8,17 +8,16 @@ function getCumputerChoice () {
     return option
 }    
 //player will pick a option
-function playerChoice (x) {
-    x = prompt("Make your choice")
-    if (x === "rock" || x === "Rock" || x === "ROCK") {
+function playerChoice () {
+    let choice1 = prompt("Make your choice")
+    let choiceLower = choice1.toLocaleLowerCase()
+    if (choiceLower === "rock") {
         return "Rock"
-    }else if (x === "paper" || x === "Paper" || x === "PAPER") {
+    } else if (choiceLower === "paper") {
         return "Paper"
-    }else if ( x === "scissors" || x === "Scissors" || x === "SCISSORS") {
+    } else if (choiceLower === "scissors") {
         return "Scissors"
     }
-
-
 }   
 function game (player, computer) {
     player = playerChoice();
@@ -42,9 +41,6 @@ function game (player, computer) {
         console.log(`${computerPoints}${rockBeats}`)
     }else {
         console.log("Draw")
-    }
-    
-    
+    }  
 }
-
 game ()
