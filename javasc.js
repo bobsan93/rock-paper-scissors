@@ -57,11 +57,11 @@ function gameLoop(winer) {
         }
     }
     if (playerScore > computerScore) {
-        console.log("Player is the winer!")
+        console.log("Player is the winer with score " + playerScore)
     }else if (playerScore < computerScore) {
-        console.log("Computer is the winer!")
+        console.log("Computer is the winer with score " + computerScore)
     }else {
-        console.log("Its a draw! No winer!")
+        console.log("Player score " + playerScore + " " + "Computer score " + computerScore + " No winer!")
     }
 }    
 gameLoop()
