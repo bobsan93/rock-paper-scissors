@@ -24,7 +24,7 @@ function playerChoice () {
         return "Scissor"
     }
 }   
-function game (player, computer) {
+function gameLoop (player, computer) {
     player = playerChoice();
     computer = getCumputerChoice();
     if (player === "Rock" && computer === "Scissor") {
@@ -43,9 +43,9 @@ function game (player, computer) {
         return "Draw"
     }  
 }
-function gameLoop(winer) {    
+function game(winer) {    
     for (let i = 0; i < 5; i++){
-        winer = game()
+        winer = gameLoop()
         if (winer === "Player Wins! Rock beats Scissor" || winer === "Player Wins! Paper beats Rock" || winer === "Player Wins! Scissor beats Paper") {
             playerScore++
             console.log(`${winer} Score ${playerScore}`)
@@ -64,4 +64,4 @@ function gameLoop(winer) {
         console.log("Player score " + playerScore + " " + "Computer score " + computerScore + " No winer!")
     }
 }    
-gameLoop()
+game()
